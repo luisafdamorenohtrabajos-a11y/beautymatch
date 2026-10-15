@@ -1,0 +1,281 @@
+
+:root {
+  color-scheme: dark;
+  --bg: #171014;
+  --panel: #241820;
+  --panel-alt: #30202a;
+  --border: #503343;
+  --text: #fff7fb;
+  --muted: #d0b9c5;
+  --pink: #ff7db8;
+  --pink-light: #ffc0dc;
+  --danger: #9d344f;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #38202f 0%, var(--bg) 55%);
+  color: var(--text);
+}
+
+.container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.hero {
+  padding-top: 38px;
+  padding-bottom: 12px;
+}
+
+.eyebrow,
+.step {
+  color: var(--pink);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  margin: 8px 0 16px;
+  font-size: 1.25rem;
+}
+
+.subtitle {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 920px) {
+  .layout {
+    grid-template-columns: 0.95fr 1.2fr 0.95fr;
+  }
+}
+
+.card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(36, 24, 32, 0.96);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+}
+
+label {
+  display: block;
+  margin: 16px 0 7px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--panel-alt);
+  color: var(--text);
+  font: inherit;
+}
+
+button,
+select {
+  font-family: inherit;
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.button {
+  padding: 11px 14px;
+  border: 0;
+  border-radius: 11px;
+  font-size: 0.88rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s;
+}
+
+.button:hover,
+.pick:hover {
+  filter: brightness(1.09);
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: var(--pink);
+  color: #29131e;
+}
+
+.secondary {
+  border: 1px solid var(--border);
+  background: var(--panel-alt);
+  color: var(--text);
+}
+
+.danger {
+  background: var(--danger);
+  color: white;
+}
+
+.question {
+  min-height: 68px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel-alt);
+  line-height: 1.55;
+}
+
+.duel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+@media (min-width: 560px) {
+  .duel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pick {
+  display: flex;
+  min-height: 175px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid #6a3a54;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #392332, #291b24);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.15s;
+}
+
+.tag {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--pink);
+  color: #29131e;
+  font-weight: 900;
+}
+
+.pick-title {
+  font-size: 1.06rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.pick-note {
+  margin-top: auto;
+  color: var(--pink-light);
+  font-size: 0.83rem;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.status {
+  min-height: 1.2em;
+  color: var(--pink-light);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.topbox {
+  min-height: 180px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--panel-alt);
+}
+
+.toprow {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toprow:last-child {
+  border-bottom: 0;
+}
+
+.rank {
+  color: var(--pink);
+  font-weight: 900;
+}
+
+.rating {
+  color: var(--pink-light);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  padding: 15px 2px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.fineprint {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.77rem;
+  line-height: 1.55;
+}
+
+.footer {
+  padding-bottom: 32px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.footer p {
+  margin: 5px 0;
+}
