@@ -1,0 +1,124 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BeautyMatch: compara opciones de belleza y descubre las favoritas mediante un ranking Elo.">
+  <title>BeautyMatch | Recomendaciones de belleza</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero container">
+    <p class="eyebrow">BELLEZA · PREFERENCIAS · DESCUBRIMIENTO</p>
+    <h1>✦ BeautyMatch</h1>
+    <p class="subtitle">
+      Dos opciones, una elección. Tus votos construyen un ranking
+      de belleza basado en las preferencias de las personas.
+    </p>
+  </header>
+
+  <main class="container layout">
+    <section class="card settings">
+      <p class="step">01 / PERSONALIZA</p>
+      <h2>Tu experiencia</h2>
+
+      <label for="categorySelect">Categoría de belleza</label>
+      <select id="categorySelect">
+        <option value="skincare">Cuidado de la piel</option>
+        <option value="maquillaje">Maquillaje</option>
+        <option value="cabello">Cuidado del cabello</option>
+        <option value="rutinas">Rutinas de belleza</option>
+        <option value="servicios">Servicios y salones</option>
+      </select>
+
+      <label for="segmentSelect">Perfil de interés</label>
+      <select id="segmentSelect">
+        <option value="general">Preferencias generales</option>
+        <option value="economico">Presupuesto ajustado</option>
+        <option value="premium">Interés en opciones premium</option>
+        <option value="sensible">Suavidad y sencillez</option>
+        <option value="practico">Facilidad de uso</option>
+      </select>
+
+      <label for="contextSelect">Criterio de comparación</label>
+      <select id="contextSelect">
+        <option value="precioCalidad">Relación precio-calidad</option>
+        <option value="favorita">Preferencia personal</option>
+        <option value="usoDiario">Uso cotidiano</option>
+      </select>
+
+      <div class="button-row">
+        <button id="btnNewPair" class="button secondary" type="button">
+          ↻ Nuevo duelo
+        </button>
+        <button id="btnReset" class="button danger" type="button">
+          Reiniciar datos
+        </button>
+      </div>
+
+      <p class="hint">
+        Cada perfil y criterio tiene su propio ranking. Los cambios se
+        guardan en este navegador.
+      </p>
+    </section>
+
+    <section class="card duel-card">
+      <p class="step">02 / COMPARA</p>
+      <h2>¿Cuál prefieres?</h2>
+      <p id="question" class="question">
+        ¿Cuál opción prefieres por su relación precio-calidad?
+      </p>
+
+      <div class="duel">
+        <button id="btnA" class="pick" type="button">
+          <span class="tag">A</span>
+          <span id="labelA" class="pick-title">Cargando opción...</span>
+          <span class="pick-note">Elegir opción A</span>
+        </button>
+
+        <button id="btnB" class="pick" type="button">
+          <span class="tag">B</span>
+          <span id="labelB" class="pick-title">Cargando opción...</span>
+          <span class="pick-note">Elegir opción B</span>
+        </button>
+      </div>
+
+      <p class="hint">
+        Elige la opción que prefieras según el criterio seleccionado.
+        Cada voto actualiza las puntuaciones Elo.
+      </p>
+
+      <p id="voteStatus" class="status" role="status" aria-live="polite"></p>
+
+      <div class="button-row">
+        <button id="btnExport" class="button secondary" type="button">
+          ↓ Exportar votos CSV
+        </button>
+        <button id="btnShowTop" class="button primary" type="button">
+          Actualizar Top 10
+        </button>
+      </div>
+    </section>
+
+    <section class="card ranking-card">
+      <p class="step">03 / DESCUBRE</p>
+      <h2>Ranking favorito</h2>
+      <p id="rankingCaption" class="hint">
+        Ordenado por puntuación Elo.
+      </p>
+      <div id="topBox" class="topbox" aria-live="polite"></div>
+      <p class="fineprint">
+        El ranking representa las preferencias registradas, no una
+        certificación de calidad, seguridad o eficacia de los productos.
+      </p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>BeautyMatch · Comparación A/B + sistema Elo</p>
+    <p>Proyecto demostrativo de recomendación basado en preferencias humanas.</p>
+  </footer>
+</body>
+</html>
